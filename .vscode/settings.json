@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "OFtutorial10.C": "cpp",
+        "OFtutorial11.C": "cpp",
+        "customActuationDiskSourceTemplates.C": "cpp",
+        "customActuationDiskSource.C": "cpp",
+        "pipeCalc.C": "cpp"
+    }
+}

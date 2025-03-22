@@ -145,6 +145,9 @@ public:
     //- Update for changes of mesh
     virtual void mapMesh(const polyMeshMap&) {};
 
+    //- Update topology using the given map
+    virtual void movePoints(const polyMesh&) {};
+
     //- Redistribute or update using the given distribution map
     virtual void distribute(const polyDistributionMap&) {};
 };

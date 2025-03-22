@@ -23,9 +23,12 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "fvCFD.H"
+#include "argList.H"
+#include "Time.H"
+#include "polyMesh.H"
+#include "emptyPolyPatch.H"
 
-#include "cellModeller.H"
+using namespace Foam;
 
 int main(int argc, char *argv[])
 {
@@ -41,8 +44,6 @@ int main(int argc, char *argv[])
         args.caseName()
     );
 
-    // disable post-processing etc.
-    runTime.functionObjects().off();
 
     // ---
     // create cell types
@@ -245,7 +246,7 @@ int main(int argc, char *argv[])
 
     // ---
     // Write the grid
-    Info << nl << "Writing extruded mesh to time = " << runTime.timeName() << nl << endl;
+    Info << nl << "Writing extruded mesh to time = " << runTime.userTimeName() << nl << endl;
     mesh.write();
 
     // ---

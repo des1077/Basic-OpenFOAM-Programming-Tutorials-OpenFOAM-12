@@ -69,13 +69,16 @@ SourceFiles
 #ifndef customActuationDiskSource_H
 #define customActuationDiskSource_H
 
-#include "fvCFD.H"
 #include "fvModel.H"
+
+#include "argList.H"
+#include "Time.H"
 #include "fvMesh.H"
 #include "fvMatrix.H"
 #include "geometricOneField.H"
-#include "addToRunTimeSelectionTable.H"
 #include "volFields.H"
+
+using namespace Foam;
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

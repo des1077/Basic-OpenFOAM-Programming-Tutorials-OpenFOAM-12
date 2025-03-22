@@ -24,7 +24,7 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "customActuationDiskSource.H"
-
+#include "addToRunTimeSelectionTable.H"
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
 namespace Foam
