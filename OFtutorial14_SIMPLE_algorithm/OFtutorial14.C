@@ -39,7 +39,11 @@ Description
 \*---------------------------------------------------------------------------*/
 
 // including basic functions and objects needed for OpenFOAM to run
-#include "fvCFD.H"
+#include "argList.H"
+#include "Time.H"
+#include "fvm.H"
+
+using namespace Foam;
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -90,7 +94,7 @@ int main(int argc, char *argv[])
     while (runTime.loop())
     {
 
-        Info << nl << "Iteration: " << runTime.timeName() << endl;
+        Info << nl << "Iteration: " << runTime.userTimeName() << endl;
 
         // Define the momentum equations as:
         // <convection term> - <diffusion term> == - <pressure gradient>
