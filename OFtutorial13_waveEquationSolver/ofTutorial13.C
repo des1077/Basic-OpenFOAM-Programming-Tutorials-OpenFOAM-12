@@ -22,8 +22,11 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 \*---------------------------------------------------------------------------*/
 
-#include "fvCFD.H"
+#include "argList.H"
+#include "Time.H"
+#include "fvm.H"
 
+using namespace Foam;
 // ************************************************************************* //
 
 int main(int argc, char *argv[])
@@ -52,7 +55,7 @@ int main(int argc, char *argv[])
     while(runTime.loop())
     {
         // printing current run time on to screen
-        Info << nl << "Time = " << runTime.timeName() << endl;
+        Info << nl << "Time = " << runTime.userTimeName() << endl;
 
         Info << "Solving h field" << endl;
 
