@@ -1,11 +1,9 @@
 /*---------------------------------------------------------------------------*\
   =========                 |
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
-   \\    /   O peration     |
-    \\  /    A nd           | www.openfoam.com
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Copyright (C) 2022-2024 OpenFOAM Foundation
      \\/     M anipulation  |
--------------------------------------------------------------------------------
-    Copyright (C) 2021 AUTHOR,AFFILIATION
 -------------------------------------------------------------------------------
 License
     This file is part of OpenFOAM.
@@ -34,7 +32,12 @@ particle to leave the domain, and draw path of the particle.
 
 \*---------------------------------------------------------------------------*/
 
-#include "fvCFD.H"
+#include "argList.H"
+#include "Time.H"
+#include "OFstream.H"
+#include "volFields.H"
+
+using namespace Foam;
 
 void saveTrajectoryToVtk(DynamicList<point>& path, fvMesh& mesh)
 {
@@ -89,7 +92,7 @@ int main(int argc, char *argv[])
     // Select the latest available time step solution.
     instantList times = runTime.times(); // Get all the available times.
     runTime.setTime(times.last(), 0); // Set the latest/last one as the current time value.
-    Info << nl << "Using flow field data from time = " << runTime.timeName() << endl;
+    Info << nl << "Using flow field data from time = " << runTime.userTimeName() << endl;
 
     // Read the velocity field from latest solutiom time folder.
     Info << nl << "Reading velocity field" <<  endl;
@@ -98,7 +101,7 @@ int main(int argc, char *argv[])
         IOobject
         (
             "U",
-            runTime.timeName(),
+            runTime.time().name(),
             mesh,
             IOobject::MUST_READ,
             IOobject::NO_WRITE

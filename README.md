@@ -249,5 +249,5 @@ is developed. This tutorial introduces following concepts:
 ![Alt text](OFtutorial16_particleTracking/testCase/particlePath.png?raw=true "Tutorial 16 - particle tracking")
 ---------
 
-## Разбор туториалов на китайском:
+## Разбор оригинальных туториалов на китайском (до 5-го туториала):
 https://www.binyang.fun/openfoam-%e7%bc%96%e7%a8%8b%e5%9f%ba%e7%a1%8001-hello-world-in-openfoam/
