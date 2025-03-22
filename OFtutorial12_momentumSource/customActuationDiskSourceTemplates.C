@@ -70,14 +70,14 @@ void Foam::fv::customActuationDiskSource::calculateMomentumSource
 
     // ===
     // output a summary field highlighting active cells and showing thrust distribution
-    if (mesh().time().outputTime())
+    if (mesh().time().writeTime())
     {
         volVectorField momentumSourceField
         (
             IOobject
             (
                 "momentumSourceField",
-                mesh().time().timeName(),
+                mesh().time().name(),
                 mesh(),
                 IOobject::NO_READ,
                 IOobject::AUTO_WRITE

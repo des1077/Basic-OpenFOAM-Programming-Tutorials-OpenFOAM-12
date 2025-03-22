@@ -25,6 +25,7 @@ License
 
 #include "customActuationDiskSource.H"
 #include "addToRunTimeSelectionTable.H"
+
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
 namespace Foam
@@ -78,12 +79,12 @@ Foam::fv::customActuationDiskSource::customActuationDiskSource
 (
     const word& name, // name as appears in fvOptions dictionary
     const word& modelType, // type of this instance
-    const dictionary& dict,
-    const fvMesh& mesh
+    const fvMesh& mesh,
+    const dictionary& dict
 )
 :
     // call the base class constructor
-    fvModel(name, modelType, dict, mesh),
+    fvModel(name, modelType, mesh, dict),
     // read control parameters from dictionary
     Uname_(coeffs().lookup("Uname")),
     diskDir_(coeffs().lookup("diskDir")),

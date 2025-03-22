@@ -175,8 +175,8 @@ public:
         (
             const word& name,
             const word& modelType,
-            const dictionary& dict,
-            const fvMesh& mesh
+            const fvMesh& mesh,
+            const dictionary& dict
         );
 
     //- Destructor
@@ -242,6 +242,18 @@ public:
 
             //- Read dictionary
             virtual bool read(const dictionary& dict);
+
+            //- Update for mesh motion (does nothing)
+            virtual bool movePoints() { return true; };
+  
+            //- Update topology using the given map (does nothing)
+            virtual void topoChange(const polyTopoChangeMap&) {};
+ 
+            //- Update from another mesh using the given map (does nothing)
+            virtual void mapMesh(const polyMeshMap&) {};
+ 
+            //- Redistribute or update using the given distribution map (does nothimg)
+            virtual void distribute(const polyDistributionMap&) {};
 
 };
 
