@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
 		    IOobject::AUTO_WRITE // will get saved automatically when the controlDict parameters will request it
 		),
 		mesh // initialises the field to match the size of the mesh with default (0) values
-	)
+	);
 
 	Info<< "Reading field U\n" << endl;
 	volVectorField U // note that velocity is a vector field
